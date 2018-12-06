@@ -107,6 +107,13 @@ function initPage() {
   for (let i = 0; i < plannedRecipes.length; i++) {
     addToDay(plannedRecipes[i]);
   }
+
+  // show the initial modal if this is user's first time using app
+  let firstTime = localStorage.getItem('firstTimeCalendar');
+  if (!firstTime) {
+    $('#tutorialModal').modal('show');
+    localStorage.setItem('firstTimeCalendar', true);
+  }
 }
 
 // remove ingredients upon deletion

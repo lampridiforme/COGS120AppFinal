@@ -206,6 +206,13 @@ function initPage() {
 
   // set searchbar to contain last query
   document.getElementById('searchbar').value = getLastSearchTerm();
+
+  // show the initial modal if this is user's first time using app
+  let firstTime = localStorage.getItem('firstTimeRecipe');
+  if (!firstTime) {
+    $('#tutorialModal').modal('show');
+    localStorage.setItem('firstTimeRecipe', true);
+  }
 }
 
 function setDate(current_date) {

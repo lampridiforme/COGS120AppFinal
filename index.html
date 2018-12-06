@@ -100,6 +100,27 @@
     <!--     toasts -->
     <div id="snackbar"></div>
 
+    <!--    modals -->
+    <div class="modal fade" style="margin-top: 100px;" id="tutorialModal" tabindex="-1" role="dialog" aria-labelledby="tutorialModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Welcome to Get Bready!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            This is the weekly plan, were you can see all of your currently planned recipes. Since this is your first time using the app, you'll need to add some recipes by going to the <span><i class="material-icons" style="padding: 0; margin: 0; font-size: 16px;">restaurant</i></span> Recipes page and adding a recipe to the plan. 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="goto('recipes.html')">Go To <span><i style="padding: 0; margin: 0; font-size: 16px;" class="material-icons">restaurant</i></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
