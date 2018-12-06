@@ -1,0 +1,19 @@
+.green {
+	background-color: #28a745 !important;
+	border-color: #216b12 !important;
+}
+
+.btn-primary {
+	background-color: #ffc107 !important;
+	border-color: #d8a612 !important;
+}
+
+.btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle, .btn-info:hover {
+    color: #fff !important;
+    background-color: #28a745 !important;
+    border-color: #216b12 !important;
+}
+
+.btn-info:not(:disabled):not(.disabled).active:focus, .btn-info:not(:disabled):not(.disabled):active:focus, .show>.btn-info.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69,.5);
+}
