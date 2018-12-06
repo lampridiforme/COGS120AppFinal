@@ -134,6 +134,26 @@
     <!--     toasts -->
     <div id="snackbar"></div>
 
+    <!--    modals -->
+    <div class="modal fade" style="margin-top: 100px;" id="tutorialModal" tabindex="-1" role="dialog" aria-labelledby="tutorialModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Shopping List</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            The Shopping List displays all of the ingredients you need to buy before you can cook a recipe. You can add and remove items by tapping Edit, and if you have a receipt, you can take a picture of it to automatically scan all of the ingredients you bought. Scanned items will be listed in your <span><i style="padding: 0; margin: 0; font-size: 16px;" class="material-icons">kitchen</i></span> Inventory.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -195,6 +215,13 @@
         }
         //set clickedSave to false
         localStorage.setItem("clickedSave", "false");
+
+        // show the initial modal if this is user's first time using app
+        let firstTime = localStorage.getItem('firstTimeList');
+        if (!firstTime) {
+          $('#tutorialModal').modal('show');
+          localStorage.setItem('firstTimeList', true);
+        }
       }
 
       initPage();

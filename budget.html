@@ -84,6 +84,12 @@
       }
 
       function initPage() {
+        // redirect to the set budget page if this is the user's first time using the app
+        let firstTime = localStorage.getItem('firstTimeBudget');
+        if (!firstTime) {
+          window.location.replace('./budgetEdit.html');
+        }
+
         let moneySpent = localStorage.getItem('budgetSpent');
         let budgetUnit = localStorage.getItem('budgetTimeUnit');
         let budget = localStorage.getItem('budgetAmount');

@@ -48,7 +48,7 @@
   </head>
   <body class="bg-light">
     <div class="text-white font-weight-bold h3" style="position: absolute; top: 7px; left: 9px;"> 
-      Budget
+      Set Budget
     </div>
     <div class="maintitle bg-secondary">
       <div class="btn-group float-right" role="group">
@@ -88,6 +88,26 @@
         <button type="button" class="btn btn-secondary sharpcorners text-warning" style="width: 21%;" onclick="goto('./budget.html')"><i class="material-icons">attach_money</i></button>
       </div>
     </footer>
+
+    <!--    modals -->
+    <div class="modal fade" style="margin-top: 100px;" id="tutorialModal" tabindex="-1" role="dialog" aria-labelledby="tutorialModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Set your Budget</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            You can set your weekly or monthly budget here. Every time you scan your receipt, your budget will be updated.  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -152,7 +172,17 @@
         budgetInput.value = (!val || isNaN(val) || val <= 0) ? 0 : val;
       }
 
+      function initPage() {
+        // show the initial modal if this is user's first time using app
+        let firstTime = localStorage.getItem('firstTimeBudget');
+        if (!firstTime) {
+          $('#tutorialModal').modal('show');
+          localStorage.setItem('firstTimeBudget', true);
+        }
+      }
+
       getBudgetThresholdFromLocalStorage();
+      initPage();
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
   </body>
