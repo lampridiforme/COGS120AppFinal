@@ -4,10 +4,12 @@
 }
 
 .btn-primary {
-/*	background-color: #ffc107 !important;
-	border-color: #d8a612 !important;*/
-	background-color: #17a2b8 !important;
-	border-color: #117a8b !important;
+	background-color: #ffc107 !important;
+	border-color: #d8a612 !important;
+/*	background-color: #17a2b8 !important;
+	border-color: #117a8b !important;*/
+/*	background-color: #28a745 !important;
+	border-color: #216b12 !important;*/
 }
 
 .btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle, .btn-info:hover {

@@ -130,7 +130,7 @@
       var myChart = new Chart(ctx, {
           type: 'doughnut',
           data: {
-              labels: ['Spent', 'Unspent'],
+              labels: ['Unspent', 'Spent'],
               datasets: [{
                   label: '# of Votes',
                   data: [(100 - getPercentageUsed()), getPercentageUsed()],

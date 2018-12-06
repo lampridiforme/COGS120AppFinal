@@ -71,7 +71,7 @@ function addToDay(recipe) {
   };
   console.log(recipe.image);
   let newCloseButton = document.createElement("div");
-  newCloseButton.innerHTML = "x";
+  newCloseButton.innerHTML = '<span><i class="material-icons" style="color: #ff4040; padding: 0; margin: 0; font-size: 20px;">cancel</i></span>';
   newCloseButton.classList.add('hideme');
   newCloseButton.classList.add('closebutton');
   // I am breaking SO MANY design rules here!

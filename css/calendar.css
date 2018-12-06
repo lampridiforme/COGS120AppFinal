@@ -68,7 +68,9 @@ body {
   position: absolute;
   width: 20px;
   height: 20px;
-  background-color: red;
+/*  background-color: #ff7e7e;
+*/  
+  color: #ff7e7e;
   right: -8px;
   top: -5px;
   border-radius: 10px;
