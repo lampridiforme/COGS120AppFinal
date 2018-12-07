@@ -94,7 +94,7 @@
     <title>Shopping List</title>
   </head>
   <body class="bg-light">
-    <div class="text-white font-weight-bold h3" style="position: absolute; top: 7px; left: 9px;"> 
+    <div class="text-white font-weight-bold h3" style="position: absolute; top: 7px; left: 9px;">
       Shopping List
     </div>
     <div class="maintitle bg-secondary">
@@ -157,10 +157,10 @@
             </button>
           </div>
           <div class="modal-body">
-            The Shopping List displays all of the ingredients you need to buy before you can cook a recipe. You can add and remove items by tapping Edit, and if you have a receipt, you can take a picture of it to automatically scan all of the ingredients you bought. Scanned items will be listed in your <span><i style="padding: 0; margin: 0; font-size: 16px;" class="material-icons">kitchen</i></span> Inventory.
+            This is your Shopping List! Here you can see all the ingredients you need to buy to make your planned recipes! Add or remove items by tapping Edit. After a shopping trip, take a picture of your receipt to instantly scan everything you bought. Scanned items and prices will update your <span><i style="padding: 0; margin: 0; font-size: 16px;" class="material-icons">kitchen</i></span> Inventory and Budget!
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Got it</button>
           </div>
         </div>
       </div>
@@ -227,7 +227,7 @@
         let toBuyList = JSON.parse(localStorage.getItem('toBuy'));
         if (!toBuyList) toBuyList = [];
         for (let i = 0; i < toBuyList.length; i++) {
-          let name = (!toBuyList[i].name) ? toBuyList[i] : toBuyList[i].name; // support name and object representation          
+          let name = (!toBuyList[i].name) ? toBuyList[i] : toBuyList[i].name; // support name and object representation
           if (displayed.indexOf(name) === -1) {
             displayInCategory(name);
             displayed.push(name);

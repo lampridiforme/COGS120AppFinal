@@ -14,12 +14,12 @@
 
     <style>
       body {
-        width: 100%; 
+        width: 100%;
         height: 100%;
       }
 
       .maintitle {
-        text-align: center; 
+        text-align: center;
         width: 100%;
         height: 50px;
       }
@@ -48,7 +48,7 @@
     <title>Inventory</title>
   </head>
   <body class="bg-light">
-    <div class="text-white font-weight-bold h3" style="position: absolute; top: 7px; left: 9px;"> 
+    <div class="text-white font-weight-bold h3" style="position: absolute; top: 7px; left: 9px;">
       Inventory
     </div>
     <div class="maintitle bg-secondary">
@@ -65,7 +65,7 @@
       <div class="text-left categorytitle text-dark">
         Produce
         <span class="badge badge-pill badge-info green" onclick="edit('produce')">Edit</span>
-      </div> 
+      </div>
 
       <ul id="producelist"></ul>
       <div class="text-left categorytitle text-dark">
@@ -78,7 +78,7 @@
         Meats
         <span class="badge badge-pill badge-info green" onclick="edit('meats')">Edit</span>
       </div>
-      
+
       <ul id="meatlist"></ul>
       <div class="text-left categorytitle text-dark">
         Misc.
@@ -108,10 +108,10 @@
             </button>
           </div>
           <div class="modal-body">
-            Any items you scanned in are displayed here. You can add/remove items and edit expiration dates by tapping the Edit button next to each category.  
+            This is your Inventory, where you can keep track of the food you currently have! Any items you scanned in are added here. Tap the Edit buttons next to each category to add expiration dates to food, or to add or remove items.
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Got it</button>
           </div>
         </div>
       </div>
