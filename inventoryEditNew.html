@@ -79,7 +79,7 @@
       </div>
       <div class="btn-group float-right" role="group">
         <!-- <button type="button" class="btn btn-secondary btn-lg sharpcorners text-light rounded" style="float: left;" onclick="goto('inventoryNew.html')">Back</button> -->
-        <button type="button" style="margin-top: 6px; margin-right: 5px;" class="font-weight-bold btn btn-info btn sharpcorners text-light rounded green" onclick="goto('inventoryEditRecieptNew.html')">Scan Receipt</button>
+        <button type="button" style="margin-top: 6px; margin-right: 5px;" class="font-weight-bold btn btn-primary btn sharpcorners text-light rounded blue" onclick="scan()">Scan Receipt</button>
       </div>
     </div>
 
@@ -92,6 +92,19 @@
       </div>
     </div>
 
+
+    <!--    modals -->
+    <div class="modal fade" style="margin-top: 100px;" id="scannerModal" tabindex="-1" role="dialog" aria-labelledby="tutorialModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body" style="text-align: center;">
+            <img src="./images/loader.gif">
+            <br>
+            Scanning receipt...
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer class="footer navbar bg-secondary navbar-fixed-bottom">
       <div class="btn-group" role="group" aria-label="Basic example" style="width: 100%; text-align: center;">
@@ -262,6 +275,12 @@
 
         // After 3 seconds, remove the show class from DIV
         setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+      }
+
+      function scan() {
+        console.log("scanning...");
+        $('#scannerModal').modal('show');
+        setTimeout(() => goto('inventoryEditRecieptNew.html'), 2000);
       }
 
       initPage();

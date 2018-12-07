@@ -3,13 +3,21 @@
 	border-color: #216b12;
 }
 
+.blue {
+	background-color: #17a2b8 !important;
+	border-color: #117a8b !important;
+}
+
 .btn-primary {
 /*	background-color: #ffc107 !important;
 	border-color: #d8a612 !important;*/
-	background-color: #17a2b8 !important;
-	border-color: #117a8b !important;
+/*	background-color: #17a2b8 !important;
+	border-color: #117a8b !important;*/
 /*	background-color: #28a745 !important;
 	border-color: #216b12 !important;*/
+
+	background-color: #86bd53;
+	border-color: #6e9e41;
 }
 
 .btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle, .btn-info:hover {

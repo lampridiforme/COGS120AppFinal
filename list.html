@@ -107,7 +107,7 @@
       </div>
     </div>
 
-    <button type="button" class="btn btn-primary btn-lg btn-block font-weight-bold" style="width: 90%; margin-left: 20px; margin-top: 20px;" onclick="goto('./scanEdit.html')">Scan Receipt</button>
+    <button type="button" class="btn btn-primary btn-lg btn-block font-weight-bold blue" style="width: 90%; margin-left: 20px; margin-top: 20px;" onclick="scan()">Scan Receipt</button>
 
     <div class="primarycontent bg-light p-3 d-flex flex-column">
       <div class="text-left categorytitle text-dark">
@@ -161,6 +161,18 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" style="margin-top: 100px;" id="scannerModal" tabindex="-1" role="dialog" aria-labelledby="tutorialModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body" style="text-align: center;">
+            <img src="./images/loader.gif">
+            <br>
+            Scanning receipt...
           </div>
         </div>
       </div>
@@ -239,6 +251,12 @@
       function edit(category) {
         localStorage.setItem('chosenCategory', category);
         goto("./listEdit.html");
+      }
+
+      function scan() {
+        console.log("scanning...");
+        $('#scannerModal').modal('show');
+        setTimeout(() => goto('scanEdit.html'), 2000);
       }
 
       initPage();

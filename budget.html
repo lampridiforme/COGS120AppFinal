@@ -92,7 +92,7 @@
 
         let moneySpent = localStorage.getItem('budgetSpent');
         let budgetUnit = localStorage.getItem('budgetTimeUnit');
-        let budget = localStorage.getItem('budgetAmount');
+        let budget = JSON.parse(localStorage.getItem('budgetAmount'));
 
         if (!moneySpent) moneySpent = 0;
         if (!budgetUnit) budgetUnit = "Per Week";
@@ -112,8 +112,8 @@
       }
 
       function getPercentageUsed() {
-        let moneySpent = localStorage.getItem('budgetSpent');
-        let budget = localStorage.getItem('budgetAmount');
+        let moneySpent = JSON.parse(localStorage.getItem('budgetSpent'));
+        let budget = JSON.parse(localStorage.getItem('budgetAmount'));
         
         if (!moneySpent || isNaN(moneySpent)) moneySpent = 0;
         if (!budget || isNaN(budget)) return 0; // avoid divide by 0 situation

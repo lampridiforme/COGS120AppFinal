@@ -135,8 +135,10 @@
         let budget = budgetSelector.value;
         // let unit = unitSelector.value;
 
-        if (!budget || isNaN(budget) || budget < 0) 
+        if (!budget || isNaN(budget) || budget < 0 || budget === "0") 
           budget = 0;
+
+        console.log(budget);
 
         localStorage.setItem('budgetAmount', budget);
         localStorage.setItem('budgetTimeUnit', budgetUnit);
