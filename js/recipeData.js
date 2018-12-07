@@ -130,7 +130,7 @@ let mockRecipeData = [
 			},
 		],
 		url: 'https://jenniferbanz.com/low-carb-pancakes',
-		image: 'https://146426-421413-1-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2016/11/low-carb-pancakes-1.jpg'
+		image: 'https://hips.hearstapps.com/del.h-cdn.co/assets/18/11/1520889184-keto-pancakes-1.jpg?crop=0.840xw:0.765xh;0.0357xw,0.143xh&resize=768:*'
 	},
 	{
 		id: 3,
