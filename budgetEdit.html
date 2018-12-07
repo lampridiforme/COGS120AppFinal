@@ -13,12 +13,12 @@
 
     <style>
       body {
-        width: 100%; 
+        width: 100%;
         height: 100%;
       }
 
       .maintitle {
-        text-align: center; 
+        text-align: center;
         width: 100%;
         height: 50px;
       }
@@ -47,7 +47,7 @@
     <title>Budget</title>
   </head>
   <body class="bg-light">
-    <div class="text-white font-weight-bold h3" style="position: absolute; top: 7px; left: 9px;"> 
+    <div class="text-white font-weight-bold h3" style="position: absolute; top: 7px; left: 9px;">
       Set Budget
     </div>
     <div class="maintitle bg-secondary">
@@ -100,10 +100,10 @@
             </button>
           </div>
           <div class="modal-body">
-            You can set your weekly or monthly budget here. Every time you scan your receipt, your budget will be updated.  
+            You can set your weekly or monthly food budget here! Every time you scan your receipt, your budget will be automatically updated.
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Got it</button>
           </div>
         </div>
       </div>
@@ -128,14 +128,14 @@
 
       function saveBudgetThresholdToLocalStorage() {
         console.log('saving changes');
-        
+
         let budgetSelector = document.getElementById('budgetInput');
         // let unitSelector = document.getElementById('timeUnitSelector');
 
         let budget = budgetSelector.value;
         // let unit = unitSelector.value;
 
-        if (!budget || isNaN(budget) || budget < 0 || budget === "0") 
+        if (!budget || isNaN(budget) || budget < 0 || budget === "0")
           budget = 0;
 
         console.log(budget);
@@ -146,7 +146,7 @@
 
       function getBudgetThresholdFromLocalStorage() {
         let savedBudget = localStorage.getItem('budgetAmount');
-        let savedUnit = localStorage.getItem('budgetTimeUnit');      
+        let savedUnit = localStorage.getItem('budgetTimeUnit');
 
         if (!savedBudget)
           savedBudget = 0;
