@@ -290,4 +290,44 @@ let mockRecipeData = [
 		url: 'https://ketogasm.com/low-carb-oysters-recipe-broiled-spicy-sauce-keto-gluten-free/',
 		image: 'https://cdn1.ketogasm.com/wp-content/uploads/2017/09/low-carb-oyster-recipe-spicy-sauce-keto-2-770x513.jpg'
 	},
+	{
+		id: 7,
+		name: "Prosciutto and Melon",
+		tags: ["appetizer", "salty", "sweet"],
+		ingredients: [
+			{
+				amount: 100,
+				unit: 'g',
+				name: 'prosciutto'
+			},
+			{
+				amount: .5,
+				unit: null,
+				name: 'cantaloupe'
+			}
+		],
+		url: "https://www.soscuisine.com/recipe/prosciutto-melon",
+		image: "https://www.soscuisine.com/media/images/recettes/very_large/3.jpg?lang=en"
+	},
+	{
+		id: 8,
+		name: "Roasted Beets with Goat Cheese",
+		tags: ["vegetarian", "salty"],
+		ingredients: [
+			{
+				name: "pickled beets"
+			},
+			{
+				name: "olive oil"
+			},
+			{
+				name: "salt"
+			},
+			{
+				name: "goat cheese"
+			}
+		],
+		url: "https://www.lecremedelacrumb.com/roasted-beets-with-goat-cheese/",
+		image: "https://www.laaloosh.com/wp-content/uploads/2012/10/beet-and-goat-cheese-salad.jpg"
+	}
 ];

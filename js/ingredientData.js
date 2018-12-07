@@ -5,7 +5,8 @@ let mockIngredientData = {
 		"red onion",
 		"onion",
 		"red bell pepper",
-		"avocado"
+		"avocado",
+		"cantaloupe"
 	],
 	spices: [
 		"salt",
@@ -24,10 +25,10 @@ let mockIngredientData = {
 	meats: [
 		"eel",
 		"oyster",
-		"egg",
 		"beef",
 		"hot dog",
-		"ground turkey"
+		"ground turkey",
+		"prosciutto"
 	],
 	misc: [
 		"rice",
@@ -41,6 +42,7 @@ let mockIngredientData = {
 		"black beans",
 		"diced tomatoes",
 		"ranch",
+		"egg",
 		"vegetable broth"
 	]
 };
