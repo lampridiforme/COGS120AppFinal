@@ -214,7 +214,22 @@
         newEntry.innerHTML = '<div class="input-group-prepend scanneditem"><div class="input-group-text"><input type="checkbox" aria-label="Checkbox for following text input" checked></div></div><input type="text" class="form-control itemname" aria-label="Text input with checkbox" placeholder="Item Name" value=' + JSON.stringify(item.name) + '><input type="date" class="form-control itemexp" aria-label="Text input with checkbox" value=' + item.expirationDate + '>';
         (button.parentElement).insertBefore(newEntry, button);
 
-        if (thingsToDisplay.indexOf(item.name) === -1) {
+        let name = item.name;
+        console.log("category: " + category);
+        console.log("name: " + name);
+        if (category === "misc") {
+          let spices = mockIngredientData.spices;
+          let meats = mockIngredientData.meats;
+          let produce = mockIngredientData.produce;
+
+          console.log("spice index: " + spices.indexOf(name));
+          console.log("meat index: " + meats.indexOf(name));
+          console.log("produce index: " + produce.indexOf(name));
+          if (spices.indexOf(name) !== -1 || meats.indexOf(name) !== -1 || produce.indexOf(name) !== -1) {
+            newEntry.style.display = "none";
+          }
+        }
+        else if (thingsToDisplay.indexOf(item.name) === -1) {
           console.log("gottem");
           newEntry.style.display = "none";
         }

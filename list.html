@@ -103,21 +103,33 @@
         <button type="button" class="btn btn-secondary sharpcorners btn-lg text-white" onclick="">Sort by Recipe</button> -->
       </div>
       <div class="btn-group float-right" role="group">
-        <button type="button" class="btn btn-secondary btn-lg sharpcorners" onclick="goto('./listEdit.html')">Edit</button>
+        <!-- <button type="button" class="btn btn-secondary btn-lg sharpcorners" onclick="goto('./listEdit.html')">Edit</button> -->
       </div>
     </div>
 
     <button type="button" class="btn btn-info btn-lg btn-block font-weight-bold green" style="width: 90%; margin-left: 20px; margin-top: 20px;" onclick="goto('./scanEdit.html')">Scan Receipt</button>
 
     <div class="primarycontent bg-light p-3 d-flex flex-column">
-      <div class="text-left categorytitle text-dark">Produce</div>
+      <div class="text-left categorytitle text-dark">
+        Produce
+        <span class="badge badge-pill badge-info green" onclick="edit('produce')">Edit</span>
+      </div>
       <ul id="producelist"></ul>
-      <div class="text-left categorytitle text-dark">Spices</div>
+      <div class="text-left categorytitle text-dark">
+        Spices
+        <span class="badge badge-pill badge-info green" onclick="edit('spices')">Edit</span>
+      </div>
       <ul id="spicelist"></ul>
-      <div class="text-left categorytitle text-dark">Meats</div>
+      <div class="text-left categorytitle text-dark">
+        Meats
+        <span class="badge badge-pill badge-info green" onclick="edit('meats')">Edit</span>
+      </div>
       <ul id="meatlist"></ul>
-      <div class="text-left categorytitle text-dark">Misc.</div>
-      <ul id="misclist"></ul>
+      <div class="text-left categorytitle text-dark">
+        Misc.
+        <span class="badge badge-pill badge-info green" onclick="edit('misc')">Edit</span>
+      </div>
+      <ul id="misclist" style="margin-bottom: 80px;"></ul>
     </div>
 
 
@@ -222,6 +234,11 @@
           $('#tutorialModal').modal('show');
           localStorage.setItem('firstTimeList', true);
         }
+      }
+
+      function edit(category) {
+        localStorage.setItem('chosenCategory', category);
+        goto("./listEdit.html");
       }
 
       initPage();

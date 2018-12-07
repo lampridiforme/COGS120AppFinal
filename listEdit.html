@@ -85,6 +85,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="./js/ingredientData.js"></script>
     <script>
       function goto(url) {
         window.location = url;
@@ -164,9 +165,19 @@
         (button.parentElement).insertBefore(newEntry, button);
       }
 
+      let addedItems = []; // avoid duplicates
       function addNewEntryWithContents(item) {
+        let category = localStorage.getItem('chosenCategory');
+        let thingsToDisplay = mockIngredientData[category];
+
         let name = (!item.name) ? item : item.name; // first case is for deprecated string representation, second for onject notation
         let price = (!item.price) ? 0 : item.price;
+
+        console.log(name);
+        console.log(addedItems);
+        if (addedItems.indexOf(name) !== -1) {
+          return;
+        }
 
         let button = document.getElementById("addEntryButton");
         let newEntry = document.createElement("div");
@@ -174,6 +185,23 @@
         newEntry.classList.add("mb-3");
         newEntry.innerHTML = '<div class="input-group-prepend scanneditem"><div class="input-group-text"><input type="checkbox" aria-label="Checkbox for following text input" checked></div></div><input type="text" class="form-control itemname" aria-label="Text input with checkbox" value=' + JSON.stringify(name) + ' placeholder="Item name">';
         (button.parentElement).insertBefore(newEntry, button);
+        addedItems.push(name);
+
+        // I am not proud of this
+        console.log("category: " + category);
+        if (category === "misc") {
+          let spices = mockIngredientData.spices;
+          let meats = mockIngredientData.meats;
+          let produce = mockIngredientData.produce;
+
+          if (spices.indexOf(name) !== -1 || meats.indexOf(name) !== -1 || produce.indexOf(name) !== -1) {
+            newEntry.style.display = "none";
+          }
+        }
+        else if (thingsToDisplay.indexOf(item.name) === -1) {
+          console.log("gottem");
+          newEntry.style.display = "none";
+        }
 
         console.log(item);
       }
